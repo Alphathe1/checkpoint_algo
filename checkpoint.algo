@@ -1,0 +1,31 @@
+ALGORITHM sentencelength
+VAR
+    c: CHAR
+    length,words,vowels: INTEGER
+BEGIN
+    length=0;
+    words=0;
+    vowels=0;
+    Write("Enter a sentence ending with period .")
+    Read(c)
+
+    IF (c <> ".") Then
+        words=1
+    END_IF
+
+    WHILE (c <> ".") DO
+
+        length = length + 1
+
+        IF (c == " ") THEN
+            words = words + 1
+        END_IF
+
+        IF (c == "a" OR c == "e" OR c == "i" OR c == "o" OR c == "u" OR
+            c == "A" OR c == "E" OR c == "I" OR c == "O" OR c == "U") Then
+            vowels = vowels + 1
+        END_IF
+
+        Write("the number of vowels is", vowels, " the number of words is",words,"the length of the sentence is"length)
+
+    END_WHILE
